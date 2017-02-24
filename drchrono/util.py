@@ -2,6 +2,8 @@ import requests
 import random
 import datetime
 from datetime import date
+from django.core.mail import EmailMessage, BadHeaderError
+from drchrono.settings import DEFAULT_EMAIL_ADDRESS, DEFAULT_PROFILE_PHOTO
 
 def get_patient_data(access_token):
 
@@ -57,7 +59,6 @@ def get_patients_with_recent_birthday(patient_list):
 
     return sorted_patients_with_daydiff
 
-
 def day_difference(from_date, to_date):
 
     from_day = date(day=from_date.day, month=from_date.month, year=2000)
@@ -66,3 +67,15 @@ def day_difference(from_date, to_date):
     delta = from_day - to_day
 
     return delta.days
+
+def send_email_util(mail_id, message):
+
+    subject = "Happy Birthday!"
+    email = EmailMessage(subject, message, to=[mail_id])
+
+    try:
+        email.send()
+    except BadHeaderError:
+        return False
+
+    return True
