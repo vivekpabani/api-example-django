@@ -2,4 +2,57 @@
 
 {% block content %}
 
+<div class="container">
+  <div class="patient_container">
+    <div class="row">
+      <div class="col-md-4 patient_sidebar">
+        <ul class="list-unstyled">
+          <li class="left clearfix"><h3><b> Patients with nearby birthday </b></h3></li>
+        </ul>
+        <div class="patient_list">
+          <ul class="list-unstyled">
+            {% for patient in patient_list %}
+              <li class="left clearfix" >
+                <span class="patient-img pull-left">
+                  <img src="{{ patient.0.profile_pic }}" class="rounded-circle" >
+                </span>
+                <div class="patient-body clearfix">
+                  <div class="header_sec">
+                    <strong class="primry-font">
+                      <a href="#" onclick="showPatientDetails('{{ patient.0.id }}', '{{ patient.0.first_name }}', '{{ patient.0.last_name }}', '{{ patient.0.email }}', '{{ patient.0.contact }}', '{{ patient.0.profile_pic }}', '{{ patient.0.address }}', '{{ patient.0.date_of_birth_str }}', '{% get_greeting_message patient.0.first_name patient.0.last_name patient.1 request.user.username%}' );"> {{ patient.0.last_name }} {{ patient.0.first_name }} </a>
+                    </strong>
+                    <strong class="pull-right">
+                      <form action="" method="post" id="greet_form_{{ patient.0.id }}" class="greet_form" enctype="multipart/form-data">{% csrf_token %}
+                        <input type="hidden" id="greet_message_{{ patient.0.id }}" name="greet_message" value='{% get_greeting_message patient.0.first_name patient.0.last_name patient.1 request.user.username %}' />
+                        <input type="hidden" id="greet_email_{{ patient.0.id }}" name="greet_email" value='{{ patient.0.email }}' />
+                        <input type="hidden" id="greet_id_{{ patient.0.id }}" name="greet_id" value='{{ patient.0.id }}' />
+                        <input type="submit" id="greet_{{ patient.0.id }}" value="Greet" class="pull-right btn btn-success" />
+                      </form>
+                    </strong>
+                  </div>
+
+                  <div class="duration_sec">
+                    {% if patient.1 < 0 %}
+                      {% widthratio patient.1 1 -1 %} days ago
+                    {% elif patient.1 == 0 %}
+                      Today is the birthday!
+                    {% else %}
+                      In {{ patient.1 }} days
+                    {% endif %}
+                  </div>
+                </div>
+              </li>
+
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <!-- patient_list -->
+
+    </div>
+
+  </div>
+
+</div>
+
 {% endblock content %}
