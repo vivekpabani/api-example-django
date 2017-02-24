@@ -43,3 +43,26 @@ def get_patient_data(access_token):
         patients_url = json['next'] # A JSON null on the last page
 
     return patients
+
+def get_patients_with_recent_birthday(patient_list):
+
+    patients_with_daydiff = list()
+
+    for patient in patient_list:
+        diff = day_difference(patient['date_of_birth'], date.today())
+        if diff > -7 and diff < 30:
+            patients_with_daydiff.append([patient, diff])
+
+    sorted_patients_with_daydiff = sorted(patients_with_daydiff, key=lambda x: x[1])
+
+    return sorted_patients_with_daydiff
+
+
+def day_difference(from_date, to_date):
+
+    from_day = date(day=from_date.day, month=from_date.month, year=2000)
+    to_day = date(day=to_date.day, month=to_date.month, year=2000)
+
+    delta = from_day - to_day
+
+    return delta.days
