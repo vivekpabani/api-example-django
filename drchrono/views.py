@@ -3,6 +3,11 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
+
+def home(request):
+
+    return render(request, 'home.html')
+
 def login_view(request):
 
     return render(request, 'login.html')
