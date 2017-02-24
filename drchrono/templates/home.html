@@ -82,6 +82,23 @@
           </tr>
 
         </table>
+
+        <div class="message_write">
+          <form action="" method="post" id="greet_form" class="greet_form" enctype="multipart/form-data">{% csrf_token %}
+            <textarea class="form-control" name="greet_message" id="greet_message"> </textarea>
+            <input type="hidden" id="greet_email" name="greet_email" value='' />
+            <input type="hidden" id="greet_id" name="greet_id" value='' />
+            <div class="clearfix"> </div>
+            <div class="message_bottom">
+              <input type="submit" id="greet_submit" value="Greet" class="pull-right btn btn-success" />
+            </div>
+          </form>
+          </div>
+        </div>
+
+      </div>
+      <!--patient info -->
+
     </div>
 
   </div>
