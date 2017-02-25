@@ -12,6 +12,9 @@ from .util import (get_patient_data,
 def home(request):
     """
     home view to display patient data whose birthday is nearby.
+    get the access token from social auth module once logged in.
+    fetch patient data from server using the token.
+    filter patient dat by recent birthdate.
     """
 
     access_token = request.user.social_auth.get(provider='drchrono').extra_data['access_token']
@@ -25,17 +28,26 @@ def home(request):
     return render(request, 'home.html', context)
 
 def login_view(request):
+    """
+    render login page
+    """
 
     return render(request, 'login.html')
 
 @login_required
 def logout_view(request):
+    """
+    logout and render login page again 
+    """
 
     auth_logout(request)
 
     return redirect('/')
 
 def send_email(request):
+    """
+    send email using the email id and message from request.
+    """
 
     if request.method == "POST":
         greet_message = request.POST.get("greet_message", "")

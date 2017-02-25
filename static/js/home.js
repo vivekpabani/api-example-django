@@ -1,5 +1,9 @@
 
 function showPatientDetails(id, first_name, last_name, email, contact_num, profile_pic, address, date_of_birth, greeting_message){
+    /*
+      Populate the patient detail div with all patient data when patient name is clicked from list.
+      Enable/disable greet button based on history(already greeted or not in session)
+    */
 
     var patient_info = document.getElementById('patient_info');
     patient_info.style.display = 'block';
@@ -37,6 +41,11 @@ function showPatientDetails(id, first_name, last_name, email, contact_num, profi
         text_area.disabled = true;
     }
 }
+
+/*
+Catch form submit event and send mail when greet is called.
+disable corresponding buttons when greeted. 
+*/
 
 $(document).ready(function() {
     $('.greet_form').submit(function() { // catch the form's submit event
