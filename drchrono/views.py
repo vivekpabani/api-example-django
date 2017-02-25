@@ -4,7 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
 from .util import (get_patient_data,
-                   get_patients_with_recent_birthday)
+                   get_patients_with_recent_birthday,
+                   send_email_util)
 
 
 @login_required
@@ -34,3 +35,15 @@ def logout_view(request):
 
     return redirect('/')
 
+def send_email(request):
+
+    if request.method == "POST":
+        greet_message = request.POST.get("greet_message", "")
+        greet_email = request.POST.get("greet_email", "")
+
+        print(greet_email, greet_message)
+
+        if send_email_util(greet_email, greet_message):
+            return HttpResponse("Greeted")
+
+    return HttpResponse("Failed")
