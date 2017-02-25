@@ -4,7 +4,7 @@ import datetime
 from datetime import date
 from django.core.mail import EmailMessage, BadHeaderError
 from django.contrib.staticfiles.templatetags.staticfiles import static
-from drchrono.settings import DEFAULT_EMAIL_ADDRESS, DEFAULT_PROFILE_PHOTO
+from drchrono.settings import DEFAULT_EMAIL_ADDRESS
 
 def get_patient_data(access_token):
 
