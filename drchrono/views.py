@@ -22,7 +22,7 @@ def home(request):
 
     context = {'patient_list': sorted_patients_with_daydiff}
 
-    return render(request, 'home.html')
+    return render(request, 'home.html', context)
 
 def login_view(request):
 
@@ -40,8 +40,6 @@ def send_email(request):
     if request.method == "POST":
         greet_message = request.POST.get("greet_message", "")
         greet_email = request.POST.get("greet_email", "")
-
-        print(greet_email, greet_message)
 
         if send_email_util(greet_email, greet_message):
             return HttpResponse("Greeted")
