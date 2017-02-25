@@ -3,6 +3,7 @@ import random
 import datetime
 from datetime import date
 from django.core.mail import EmailMessage, BadHeaderError
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from drchrono.settings import DEFAULT_EMAIL_ADDRESS, DEFAULT_PROFILE_PHOTO
 
 def get_patient_data(access_token):
@@ -39,7 +40,7 @@ def get_patient_data(access_token):
                 patient['email'] = DEFAULT_EMAIL_ADDRESS
 
             if not result['patient_photo']:
-                patient['profile_pic'] = DEFAULT_PROFILE_PHOTO
+                patient['profile_pic'] = static('img/default-profile.png')
             patients.append(patient)
 
         patients_url = json['next'] # A JSON null on the last page
