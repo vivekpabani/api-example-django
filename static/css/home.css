@@ -1,0 +1,200 @@
+
+body, html, .container-fluid {
+    height: 100%;
+    min-height: 100%;
+    margin:0;
+    overflow-x: hidden;
+    overflow-y:hidden;
+}
+.body {
+    box-sizing: border-box;
+    padding-top:40px;
+    background:red;
+    z-index:1;
+}
+.navbar {
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    background:#000033;
+    z-index:2;
+}
+
+.container {
+  padding-top:50px;
+}
+
+.content {
+  background: #FFFFFF;
+  height: 100%;
+}
+
+.all_patients i {
+  backgroud: #e9e7e8 none repeat scroll 0 0;
+  border-radius: 100px;
+  color: #636363;
+  font-size: 17px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  width: 30px;
+}
+
+.all_patients .caret {
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  right: 15px;
+  top: 0;  
+}
+
+.all_patients .dropdown-menu {
+  backgroud: #f5f3f3 none repeat scroll 0 0;
+  border-radius: 0;
+  margin-top: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.all_patients ui li {
+  border-bottom: 1px solid #dddddd'
+  line-height: normal;
+  width: 100%;
+}
+
+.all_patients ui li a:hover {
+  background: #dddddd none repeat scroll 0 0;
+  color: #333;
+}
+
+.all_patients ui li a {
+  color: #333;
+  line-height: 30px;
+  padding: 3px 20px;
+}
+
+.patient_list .patient-body {
+  margin-left: 47px;
+  margin-top: 0;
+}
+
+.patient_list .duration_sec {
+  margin-top: 3px;
+}
+
+.patient_list ul {
+  border: 1px solid #dddddd;
+} 
+
+.patient_list li {
+  padding: 6px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.patient_list li:last-child {
+  border-bottom: none;
+}
+
+.patient_list {
+  height: 70%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.patient-img img {
+  width: 34px;
+  height: 34px;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.patient_info {
+  display: None;
+}
+
+.message_write {
+  background: #f5f3f3 none repeat scroll 0 0;
+  float: left;
+  padding: 15px;
+  width: 100%; 
+}
+
+.message_write textarea.form-control {
+  height: 70px;
+  padding: 10px;
+}
+
+.message_bottom {
+  float: left;
+  margin-top: 13px;
+  width: 100%;
+}
+
+td:nth-child(1) {  
+  width: 30%;
+}
+
+td:nth-child(3) {
+  width: 45%;
+}
+
+header {
+  text-align: center;
+  //background: #18BC9C;
+  background: #FFFFFF;
+  color: white;
+}
+
+header .header-container {
+  padding-top: 100px;
+  //padding-bottom: 50px;
+}
+
+header img {
+  display: block;
+  margin: 0 auto 20px;
+  height: 400px;
+  width: 450px;
+}
+
+header .intro-text .main-message {
+  display: block;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  //text-transform: uppercase;
+  font-weight: 600;
+  font-size: 26pt;
+  color: #000033;
+}
+
+header .intro-text .sub-message {
+  font-size: 14pt;
+  font-weight: 400;
+  color: #000066;
+  margin-left: 150px;
+  float: right;
+  padding-right: 150px;
+}
+
+/*
+@media (min-width: 768px) {
+  header .container {
+    padding-top: 200px;
+    padding-bottom: 100px;
+  }
+  header .intro-text .name {
+    font-size: 24pt;
+  }
+  header .intro-text .skills {
+    font-size: 1.75em;
+  }
+}
+*/
+
