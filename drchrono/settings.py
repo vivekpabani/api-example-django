@@ -14,7 +14,14 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 from .secret_config import (SOCIAL_AUTH_DRCHRONO_KEY,
                             SOCIAL_AUTH_DRCHRONO_SECRET,
-                            SECRET_KEY)
+                            SECRET_KEY,
+                            EMAIL_USE_TLS,
+                            EMAIL_HOST,
+                            EMAIL_HOST_USER,
+                            EMAIL_HOST_PASSWORD,
+                            EMAIL_PORT,
+                            DEFAULT_EMAIL_ADDRESS,
+                            DEFAULT_PROFILE_PHOTO)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
