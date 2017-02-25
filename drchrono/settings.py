@@ -22,8 +22,7 @@ try:
                             EMAIL_HOST_USER,
                             EMAIL_HOST_PASSWORD,
                             EMAIL_PORT,
-                            DEFAULT_EMAIL_ADDRESS,
-                            DEFAULT_PROFILE_PHOTO)
+                            DEFAULT_EMAIL_ADDRESS)
 except:
     # set as config on platform
     pass
@@ -37,7 +36,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = "Your secret key from secret config"
 
-DEBUG = False
+DEBUG = False 
 
 if not DEBUG:
     SECRET_KEY = os.environ['SECRET_KEY']
@@ -49,7 +48,6 @@ if not DEBUG:
     EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
     EMAIL_PORT = os.environ['EMAIL_PORT']
     DEFAULT_EMAIL_ADDRESS = os.environ['DEFAULT_EMAIL_ADDRESS']
-    DEFAULT_PROFILE_PHOTO = os.environ['DEFAULT_PROFILE_PHOTO']
 
 ALLOWED_HOSTS = ['*']
 
