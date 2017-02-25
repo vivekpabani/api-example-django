@@ -71,6 +71,7 @@ def day_difference(from_date, to_date):
 def send_email_util(mail_id, message):
 
     subject = "Happy Birthday!"
+    message = message.replace('\\n', '\r\n')
     email = EmailMessage(subject, message, to=[mail_id])
 
     try:
