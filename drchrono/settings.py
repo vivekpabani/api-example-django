@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import dj_database_url
-from .secret_config import (SOCIAL_AUTH_DRCHRONO_KEY,
+try:
+    from .secret_config import (SOCIAL_AUTH_DRCHRONO_KEY,
                             SOCIAL_AUTH_DRCHRONO_SECRET,
                             SECRET_KEY,
                             EMAIL_USE_TLS,
@@ -23,6 +24,9 @@ from .secret_config import (SOCIAL_AUTH_DRCHRONO_KEY,
                             EMAIL_PORT,
                             DEFAULT_EMAIL_ADDRESS,
                             DEFAULT_PROFILE_PHOTO)
+except:
+    # set as config on platform
+    pass
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
