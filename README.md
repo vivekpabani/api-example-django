@@ -4,6 +4,7 @@ A birthday reminder application using drchrono api which shows all contacts with
 Available on:
 https://birthdayreminder-app.herokuapp.com
 
+![home page of the application](http://gdurl.com/DR1f "Home Page of the application.")
 ### Setup
 
 `social_auth_drchrono/` contains a custom provider for [Python Social Auth](http://psa.matiasaguirre.net/) that handles OAUTH for drchrono. You will also need to set up mail credentials. To configure these, set these fields in your `drchrono/secret_config.py` file:
