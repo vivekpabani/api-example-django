@@ -1,11 +1,12 @@
 from django.conf.urls import include, url
-from django.views.generic import TemplateView
+from django.contrib import admin
 
 import views
 
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^send_email/', views.send_email, name='send_email'),
     url(r'^login_view/', views.login_view, name='login_view'),
     url(r'^logout_view/', views.logout_view, name='logout_view'),
